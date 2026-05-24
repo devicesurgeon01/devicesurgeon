@@ -1,0 +1,21 @@
+# robots.txt — Device Surgeon
+# https://www.devicesurgeon.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.devicesurgeon.com/sitemap.xml
+
+# Block common junk bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
