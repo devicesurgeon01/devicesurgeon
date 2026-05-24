@@ -77,13 +77,13 @@
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
         "opens": "09:00",
-        "closes": "20:00"
+        "closes": "19:00"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Sunday"],
         "opens": "11:00",
-        "closes": "20:00"
+        "closes": "16:00"
       }
     ],
     "aggregateRating": {
@@ -169,6 +169,8 @@
       --white: #f5f2ec;
       --blue: #1a6fd4;
       --blue-dark: #1458aa;
+      --red: #d9251d;
+      --red-dark: #a81b15;
       --gray: #1c1c1c;
       --mid: #2e2e2e;
       --muted: #6b6b6b;
@@ -240,9 +242,9 @@
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 0.6rem;
       font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--blue, #1a6fd4); font-weight: 600; margin-bottom: 1.5rem;
+      color: var(--red, #d9251d); font-weight: 600; margin-bottom: 1.5rem;
     }
-    .hero-eyebrow::before { content:''; display:block; width:28px; height:1px; background:var(--blue); }
+    .hero-eyebrow::before { content:''; display:block; width:28px; height:1px; background:var(--red, #d9251d); }
     h1 {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(4rem, 7vw, 7.5rem);
@@ -275,13 +277,13 @@
     .stat-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.07);
-      border-left: 3px solid var(--blue);
+      border-left: 3px solid var(--red, #d9251d);
       padding: 1.3rem 1.6rem;
       backdrop-filter: blur(8px);
       transition: background 0.25s, transform 0.2s;
     }
     .stat-card:hover { background: rgba(255,255,255,0.07); transform: translateX(4px); }
-    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--blue, #1a6fd4); line-height: 1; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--red, #d9251d); line-height: 1; }
     .stat-label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,236,0.45); font-weight: 300; margin-top: 0.2rem; }
 
     /* ── MARQUEE ── */
@@ -348,7 +350,7 @@
     }
     .service-card:hover { background: var(--mid, #2e2e2e); }
     .service-card:hover::after { width: 100%; }
-    .service-icon { font-size: 2rem; margin-bottom: 1.1rem; display: block; }
+    .service-icon { font-size: 2rem; margin-bottom: 1.1rem; display: block; filter: drop-shadow(0 0 6px rgba(217,37,29,0.5)); }
     .service-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.04em; margin-bottom: 0.6rem; }
     .service-card p { font-size: 0.87rem; font-weight: 300; line-height: 1.65; color: rgba(245,242,236,0.5); }
     .service-tags { margin-top: 1.1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -375,13 +377,13 @@
     .process-step { text-align: center; padding: 0 1.5rem; position: relative; z-index: 1; }
     .step-num {
       width: 4.5rem; height: 4.5rem; border-radius: 50%;
-      background: var(--black, #0a0a0a); border: 1px solid rgba(26,111,212,0.4);
+      background: var(--black, #0a0a0a); border: 1px solid rgba(217,37,29,0.4);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--blue, #1a6fd4);
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--red, #d9251d);
       margin: 0 auto 1.5rem;
       transition: background 0.3s, border-color 0.3s;
     }
-    .process-step:hover .step-num { background: var(--blue); border-color: var(--blue, #1a6fd4); color: var(--white, #f5f2ec); }
+    .process-step:hover .step-num { background: var(--red, #d9251d); border-color: var(--red, #d9251d); color: var(--white, #f5f2ec); }
     .process-step h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
     .process-step p { font-size: 0.85rem; font-weight: 300; line-height: 1.65; color: rgba(245,242,236,0.5); }
 
@@ -398,7 +400,7 @@
     }
     /* Big quote pull */
     .pull-quote {
-      border-left: 3px solid var(--blue); padding-left: 1.5rem; margin-top: 2rem;
+      border-left: 3px solid var(--red, #d9251d); padding-left: 1.5rem; margin-top: 2rem;
     }
     .pull-quote blockquote {
       font-size: 1.05rem; font-weight: 300; line-height: 1.75;
@@ -412,13 +414,13 @@
       padding: 1.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     .why-item:first-child { padding-top: 0; }
-    .why-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--blue, #1a6fd4); line-height: 1; min-width: 2.2rem; opacity: 0.6; }
+    .why-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--red, #d9251d); line-height: 1; min-width: 2.2rem; opacity: 0.7; }
     .why-item h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
     .why-item p { font-size: 0.86rem; font-weight: 300; line-height: 1.65; color: rgba(245,242,236,0.5); }
 
     /* ── CTA BAND ── */
     .cta-band {
-      background: var(--blue); padding: 4rem 2.5rem;
+      background: var(--red, #d9251d); padding: 4rem 2.5rem;
       display: flex; align-items: center; justify-content: space-between;
       gap: 2rem; flex-wrap: wrap;
     }
@@ -444,8 +446,8 @@
       margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem;
     }
     .rating-display { display: flex; align-items: center; gap: 1rem; }
-    .rating-num { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; line-height: 1; color: var(--blue, #1a6fd4); }
-    .rating-stars { font-size: 1.4rem; margin-bottom: 0.2rem; }
+    .rating-num { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; line-height: 1; color: var(--red, #d9251d); }
+    .rating-stars { font-size: 1.4rem; margin-bottom: 0.2rem; color: var(--red, #d9251d); }
     .rating-count { font-size: 0.8rem; color: rgba(245,242,236,0.4); font-weight: 300; }
 
     .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -456,7 +458,7 @@
       display: flex; flex-direction: column;
     }
     .review-card:hover { border-color: rgba(26,111,212,0.3); transform: translateY(-3px); }
-    .review-stars { color: #f5a623; font-size: 0.9rem; margin-bottom: 1rem; }
+    .review-stars { color: var(--red, #d9251d); font-size: 0.9rem; margin-bottom: 1rem; }
     .review-text {
       font-size: 0.9rem; font-weight: 300; line-height: 1.72;
       color: rgba(245,242,236,0.72); margin-bottom: 1.2rem; font-style: italic;
@@ -930,8 +932,8 @@
         <div class="info-block">
           <h4>Hours</h4>
           <table class="hours-table">
-            <tr><td>Monday – Saturday</td><td>9:00 AM – 8:00 PM</td></tr>
-            <tr><td>Sunday</td><td>11:00 AM – 8:00 PM</td></tr>
+            <tr><td>Monday – Saturday</td><td>9:00 AM – 7:00 PM</td></tr>
+            <tr><td>Sunday</td><td>11:00 AM – 4:00 PM</td></tr>
           </table>
         </div>
         <div class="contact-actions">
