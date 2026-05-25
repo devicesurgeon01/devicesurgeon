@@ -221,16 +221,26 @@
       padding: 9rem 2.5rem 5rem;
       position: relative; overflow: hidden;
     }
+    .hero-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      filter: brightness(0.18) saturate(0.6);
+      z-index: 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video { display: none; }
+    }
     .hero::before {
       content: '';
-      position: absolute; inset: 0;
+      position: absolute; inset: 0; z-index: 1;
       background:
-        radial-gradient(ellipse 55% 60% at 80% 50%, rgba(26,111,212,0.10) 0%, transparent 70%),
+        linear-gradient(to right, rgba(10,10,10,0.97) 40%, rgba(10,10,10,0.55) 100%),
+        radial-gradient(ellipse 55% 60% at 80% 50%, rgba(217,37,29,0.08) 0%, transparent 70%),
         radial-gradient(ellipse 40% 50% at 10% 80%, rgba(26,111,212,0.05) 0%, transparent 60%);
       pointer-events: none;
     }
     .hero-grid-bg {
-      position: absolute; inset: 0;
+      position: absolute; inset: 0; z-index: 2;
       background-image:
         linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
@@ -238,7 +248,7 @@
       mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
       pointer-events: none;
     }
-    .hero-left { position: relative; z-index: 2; }
+    .hero-left { position: relative; z-index: 3; }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 0.6rem;
       font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
@@ -273,7 +283,7 @@
     .btn-secondary:hover { border-color: var(--white, #f5f2ec); transform: translateY(-2px); }
 
     /* Hero right — stat cards */
-    .hero-right { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 1rem; }
+    .hero-right { position: relative; z-index: 3; display: flex; flex-direction: column; gap: 1rem; }
     .stat-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.07);
@@ -621,6 +631,9 @@
 
   <!-- HERO -->
   <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="">
+      <source src="hero.mp4" type="video/mp4">
+    </video>
     <div class="hero-grid-bg"></div>
     <div class="hero-left">
       <p class="hero-eyebrow fade-in">Boonton, NJ · 419 Main St</p>
